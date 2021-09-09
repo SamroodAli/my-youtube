@@ -1,8 +1,13 @@
+import "./VideoItem.css";
+
 const VideoItem = ({ video }) => {
-  const { snippet } = video;
+  const { thumbnails, description, title } = video.snippet;
   return (
-    <div>
-      {/* <img src={snippet.thumbnail.medium.url} alt={snippet.desciption} /> */}
+    <div className="item video-item">
+      <img className="ui image" src={thumbnails.medium.url} alt={description} />
+      <div className="content">
+        <div className="header">{title}</div>
+      </div>
     </div>
   );
 };
