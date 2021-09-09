@@ -1,6 +1,6 @@
 import VideoItem from "./VideoItem";
 
-const VideoList = ({ videos }) => {
+const VideoList = ({ videos, onSelectVideo }) => {
   const videoItems = videos.map((video) => (
     <VideoItem video={video} key={video.etag} />
   ));

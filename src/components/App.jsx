@@ -16,6 +16,7 @@ class App extends React.Component {
         q: term,
       },
     });
+
     this.setState({ videos: response.data.items });
     console.log(this.state.videos);
   };
@@ -24,7 +25,10 @@ class App extends React.Component {
     return (
       <div className="ui  container">
         <SearchBar onSubmit={this.onSearchSubmit} />
-        <VideoList videos={this.state.videos} />
+        <VideoList
+          videos={this.state.videos}
+          onSelectVideo={this.onSelectVideo}
+        />
       </div>
     );
   }
