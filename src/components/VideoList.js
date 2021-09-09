@@ -1,5 +1,8 @@
+import VideoItem from "./VideoItem";
+
 const VideoList = ({ videos }) => {
-  return <div>{videos.length}</div>;
+  const videoItems = videos.map((video) => <VideoItem />);
+  return videoItems;
 };
 
 export default VideoList;
