@@ -2,6 +2,7 @@ import "./VideoItem.css";
 
 const VideoItem = ({ video, onSelectVideo }) => {
   const { thumbnails, description, title } = video.snippet;
+
   return (
     <div className="item video-item" onClick={(e) => onSelectVideo(video)}>
       <img className="ui image" src={thumbnails.medium.url} alt={description} />
@@ -11,4 +12,5 @@ const VideoItem = ({ video, onSelectVideo }) => {
     </div>
   );
 };
+
 export default VideoItem;
