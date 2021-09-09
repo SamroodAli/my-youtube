@@ -1,8 +1,8 @@
 import React from "react";
 import youtube from "../api/youtube";
-import SearchBar from "./SearchBar";
-import VideoList from "./VideoList";
-import VideoDetail from "./VideoDetail";
+import SearchBar from "./SearchBar.jsx";
+import VideoList from "./VideoList.jsx";
+import VideoDetail from "./VideoDetail.jsx";
 
 class App extends React.Component {
   state = { videos: [], selectedVideo: null };
