@@ -18,10 +18,15 @@ class App extends React.Component {
       },
     });
 
-    this.setState({ videos: response.data.items }, () =>
-      this.setState({ selectedVideo: this.state.videos[0] })
-    );
+    this.setState({
+      videos: response.data.items,
+      selectedVideo: response.data.items[0],
+    });
   };
+
+  componentDidMount() {
+    this.onSearchSubmit("chill lofi beats to code/relax to");
+  }
 
   render() {
     return (
