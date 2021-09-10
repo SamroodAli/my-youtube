@@ -18,20 +18,30 @@ class App extends React.Component {
       },
     });
 
-    this.setState({ videos: response.data.items });
+    this.setState({ videos: response.data.items }, () =>
+      this.setState({ selectedVideo: this.state.videos[0] })
+    );
   };
 
   render() {
     return (
       <div className="ui  container">
         <SearchBar onSubmit={this.onSearchSubmit} />
-        {this.state.selectedVideo && (
-          <VideoDetail video={this.state.selectedVideo} />
-        )}
-        <VideoList
-          videos={this.state.videos}
-          onSelectVideo={this.onSelectVideo}
-        />
+        <div className="ui grid">
+          <div className="ui row">
+            {this.state.selectedVideo && (
+              <div className="eleven wide column">
+                <VideoDetail video={this.state.selectedVideo} />
+              </div>
+            )}
+            <div className="five wide column">
+              <VideoList
+                videos={this.state.videos}
+                onSelectVideo={this.onSelectVideo}
+              />
+            </div>
+          </div>
+        </div>
       </div>
     );
   }
