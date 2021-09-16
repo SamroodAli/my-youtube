@@ -8,7 +8,7 @@ A video streaming app with the youtube api built with create-react-app.
 
 [heroku link](https://samrood-youtube.herokuapp.com/)
 [vercel link](https://my-youtube-bgtswknuw-samroodali.vercel.app/)
-
+[netlify link](https://samrood-youtube.netlify.app//)
 
 
 ## Getting Started
