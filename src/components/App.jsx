@@ -2,11 +2,15 @@ import React, { useState, useEffect } from "react";
 import SearchBar from "./SearchBar.jsx";
 import VideoList from "./VideoList.jsx";
 import VideoDetail from "./VideoDetail.jsx";
+import useVideos from "../hooks/useVideos";
 
 const App = () => {
-  // const [selectedVideo, setSelectedVideo] = useState(null);
-  // setSelectedVideo(response.data.items[0]); // does one thing
-  // chill lofi beats to code/relax to
+  const [selectedVideo, setSelectedVideo] = useState(null);
+  const [videos, onSearchSubmit] = useVideos("chill lofi beats");
+
+  useEffect(() => {
+    setSelectedVideo(videos[0]);
+  }, [videos]);
 
   return (
     <div className="ui  container">
